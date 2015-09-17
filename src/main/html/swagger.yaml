@@ -78,6 +78,7 @@ paths:
     get:
       description: Returns a user based on a single ID, if the user does not have access to the pet
       operationId: getPetById
+      x-custom: a custom value
       parameters:
         - name: id
           in: path
@@ -121,13 +122,14 @@ definitions:
           id:
             type: integer
             format: int64
-    x-links:
-      - deletePet:
-          properties:
-            id: id
-      - getPetById:
-          properties:
-            id: id
+        x-links:
+          - name: deletePet
+            properties:
+              - id: id
+          - name: getPetById
+            properties:
+              - id: id
+
 
   NewPet:
     required:
@@ -137,6 +139,9 @@ definitions:
         type: string
       tag:
         type: string
+    x-test:
+      dummy: value
+      anotherDummy: value2
 
   Error:
     required:

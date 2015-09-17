@@ -23,7 +23,12 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
     if (this.isParam) {
       $('.notice', $(this.el)).text('Click to set as parameter value');
     }
-
+    //console.log('==============');
+    //console.log(this.model.links);
+    if(this.model.links){
+      console.log(this.model.links.definition['x-links']);
+    }
+    console.log(this.model.test);
     return this;
   },
 
@@ -76,4 +81,5 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
       }
     }
   }
+
 });

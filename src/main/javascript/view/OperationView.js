@@ -159,11 +159,14 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       for (key in successResponse) {
         value = successResponse[key];
         this.model.successCode = key;
+        var myLinks = this.model;
         if (typeof value === 'object' && typeof value.createJSONSample === 'function') {
           signatureModel = {
             sampleJSON: JSON.stringify(value.createJSONSample(), void 0, 2),
             isParam: false,
-            signature: value.getMockSignature()
+            signature: value.getMockSignature(),
+            links: value,
+            test: 'this is a test'
           };
         }
       }

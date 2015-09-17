@@ -17,6 +17,11 @@
   </div>
 
   <div class="hypermedia">
-    Hypermedia definition goes here.
+    Hypermedia definition goes here:
+    <ul>
+    {{#each links.definition.x-links}}
+        <li><a class="toggleOperation" href="#!/default/{{{this.name}}}">{{{this.name}}}</a></li>
+    {{/each}}
+    </ul>
   </div>
 </div>

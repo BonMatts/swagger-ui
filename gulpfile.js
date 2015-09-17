@@ -130,7 +130,7 @@ gulp.task('copy', ['less'], function() {
  * Watch for changes and recompile
  */
 gulp.task('watch', function() {
-  return watch(['./src/**/*.{js,less,handlebars,html}'], function() {
+  return watch(['./src/**/*.{js,less,handlebars,html,yaml}'], function() {
     gulp.start('default');
   });
 });
